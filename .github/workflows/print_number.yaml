@@ -27,4 +27,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Print a number step
-      run: echo "Hello! You type ${{ github.event.inputs.name }} as a number."
+      run: echo "Hello! You type ${{ github.event.inputs.number }} as a number."

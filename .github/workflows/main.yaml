@@ -28,8 +28,8 @@ jobs:
       env:
         RANDOM_NUMBER: -1
 
-  #call-print_number_workflow:
-    #uses: ./.github/workflows/print_number.yaml
-    #with:
-    #  number: ${{ env.RANDOM_NUMBER }}
-    #secrets: inherit
+  call-print_number_workflow:
+    uses: ./.github/workflows/print_number.yaml
+    with:
+      number: 99
+    secrets: inherit

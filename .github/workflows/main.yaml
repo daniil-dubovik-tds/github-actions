@@ -18,4 +18,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Randomize number
-      run: bash ./scripts/get_number.sh
+      run: bash ./github/scripts/get_number.sh

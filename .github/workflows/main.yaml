@@ -15,7 +15,7 @@ jobs:
       random-number: ${{ steps.random-number-step.outputs.test }}
     steps:
       - uses: actions/checkout@v3
-      - name: Get a random number
+      #- name: Get a random number
       - id: random-number-step
         run: echo "test=./.github/scripts/get_number.sh" >> "$GITHUB_OUTPUT"
 

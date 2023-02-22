@@ -12,12 +12,12 @@ jobs:
   get_number_workflow:
     runs-on: macos-latest
     outputs:
-      random-number: ${{ steps.random-number-step.outputs.random-number }}
+      random-number: ${{ steps.get-random-number-step.outputs.number }}
     steps:
       - uses: actions/checkout@v3
       - name: Get a random number
-        id: random-number-step
-        run: echo "random-number=$(./.github/scripts/get_number.sh)" >> $GITHUB_OUTPUT
+        id: get-random-number-step
+        run: echo "number=$(./.github/scripts/get_number.sh)" >> $GITHUB_OUTPUT
 
   call-print_number_workflow:
     needs: get_number_workflow

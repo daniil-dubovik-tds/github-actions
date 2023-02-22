@@ -1,1 +1,1 @@
-echo $(($RANDOM % 255))
+echo $RANDOM

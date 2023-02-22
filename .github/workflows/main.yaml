@@ -11,8 +11,8 @@ on:
 jobs:
   get_number_workflow:
     runs-on: macos-latest
-    uses: actions/checkout@v3
     steps:
+      - uses: actions/checkout@v3
       - run: ./.github/scripts/get_number.sh
 
   call-print_number_workflow:

@@ -9,8 +9,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  call-print_number_workflow:
+  call-print_number_workflow-1:
     uses: ./.github/workflows/print_number.yaml
     with:
       number: 99
+    secrets: inherit
+
+  call-print_number_workflow-2:
+    uses: ./.github/workflows/print_number.yaml
+    with:
+      number: 100
     secrets: inherit

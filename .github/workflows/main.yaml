@@ -23,5 +23,5 @@ jobs:
     needs: get_number_workflow
     uses: ./.github/workflows/print_number.yaml
     with:
-      number: 99
+      number: ${{needs.get_number_workflow.outputs.random-number}}
     secrets: inherit

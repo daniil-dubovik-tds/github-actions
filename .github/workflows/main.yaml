@@ -12,8 +12,7 @@ jobs:
   get_number_workflow:
     runs-on: macos-latest
     steps:
-      name: Randomize number
-      run: ./.github/scripts/get_number.sh
+      - run: ./.github/scripts/get_number.sh
 
   call-print_number_workflow:
     uses: ./.github/workflows/print_number.yaml

@@ -6,19 +6,18 @@ name: Main
 # or API.
 on:
   workflow_dispatch:
-    outputs:
-      random-number:
-        description: "Random output number"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   get_number_workflow:
     runs-on: macos-latest
+    outputs:
+      random-number: ${{ steps.random-number-step.outputs.test }}
     steps:
       - uses: actions/checkout@v3
       - name: Get a random number
       - id: random-number-step
-        run: echo "random-number=$(echo ./.github/scripts/get_number.sh)" >> $GITHUB_OUTPUT
+        run: echo "test=./.github/scripts/get_number.sh" >> "$GITHUB_OUTPUT"
 
   call-print_number_workflow:
     needs: get_number_workflow

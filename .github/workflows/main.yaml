@@ -16,8 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Get a random number
-        id: random-number-step
-        run: echo "random-number=$(echo ./.github/scripts/get_number.sh)" >> "$GITHUB_OUTPUT"
+        id: random-number-step        
+        # echo "random-number=$(echo ./.github/scripts/get_number.sh)" >> "$GITHUB_OUTPUT"
+        run: echo "::set-output name=random-number::$(./.github/scripts/get_number.sh)"
 
   call-print_number_workflow:
     needs: get_number_workflow

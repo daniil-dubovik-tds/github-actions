@@ -25,11 +25,9 @@ jobs:
     # Runs a single command using the runners shell
     - name: Randomize number
       run: ./.github/scripts/get_number.sh
-      env:
-        RANDOM_NUMBER: -1
 
   call-print_number_workflow:
-    uses: ./.github/workflows/print_number.yaml
+    uses: ./.github/workflows/print_number.yaml@print_number
     with:
       number: 99
     secrets: inherit

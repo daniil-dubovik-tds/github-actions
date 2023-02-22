@@ -5,6 +5,12 @@ name: Print a number
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
+  workflow_call:
+    inputs:
+      number:
+        description: 'Put a number'
+        default: '0'
+        required: true
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:

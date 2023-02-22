@@ -9,7 +9,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  get_number_workflow:
+  get-number-workflow:
     runs-on: macos-latest
     outputs:
       random-number: ${{ steps.get-random-number-step.outputs.number }}
@@ -19,7 +19,14 @@ jobs:
         id: get-random-number-step
         run: echo "number=$(./.github/scripts/get_number.sh)" >> $GITHUB_OUTPUT
 
-  call-print_number_workflow:
+  call-print-number-workflow-1:
+    needs: get_number_workflow
+    uses: ./.github/workflows/print_number.yaml
+    with:
+      number: ${{needs.get_number_workflow.outputs.random-number}}
+    secrets: inherit
+
+  call-print-number-workflow-2:
     needs: get_number_workflow
     uses: ./.github/workflows/print_number.yaml
     with:

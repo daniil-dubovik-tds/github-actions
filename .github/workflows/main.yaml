@@ -20,15 +20,15 @@ jobs:
         run: echo "number=$(./.github/scripts/get_number.sh)" >> $GITHUB_OUTPUT
 
   call-print-number-workflow-1:
-    needs: get_number_workflow
+    needs: get-number-workflow
     uses: ./.github/workflows/print_number.yaml
     with:
-      number: ${{needs.get_number_workflow.outputs.random-number}}
+      number: ${{needs.get-number-workflow.outputs.random-number}}
     secrets: inherit
 
   call-print-number-workflow-2:
-    needs: get_number_workflow
+    needs: get-number-workflow
     uses: ./.github/workflows/print_number.yaml
     with:
-      number: ${{needs.get_number_workflow.outputs.random-number}}
+      number: ${{needs.get-number-workflow.outputs.random-number}}
     secrets: inherit

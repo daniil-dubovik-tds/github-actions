@@ -9,7 +9,7 @@ on:
     inputs:
       number:
         description: 'Put a number'
-        type: number
+        type: string
 
   workflow_dispatch:
     # Inputs the workflow accepts.

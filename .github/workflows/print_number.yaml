@@ -9,8 +9,8 @@ on:
     inputs:
       number:
         description: 'Put a number'
-        default: '0'
-        required: true
+        type: number
+
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:

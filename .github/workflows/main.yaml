@@ -13,7 +13,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ./.github/scripts/get_number.sh
+      - name: Get a random number
+        run: ./.github/scripts/get_number.sh
 
   call-print_number_workflow:
     uses: ./.github/workflows/print_number.yaml

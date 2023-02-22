@@ -6,6 +6,9 @@ name: Main
 # or API.
 on:
   workflow_dispatch:
+    outputs:
+      random-number:
+        description: "Random output number"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -14,10 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Get a random number
-        run: ./.github/scripts/get_number.sh
+      - id: random-number-step
+        run: echo "random-number=$(echo ./.github/scripts/get_number.sh)" >> $GITHUB_OUTPUT
 
   call-print_number_workflow:
+    needs: get_number_workflow
     uses: ./.github/workflows/print_number.yaml
     with:
-      number: 100
+      number: 99
     secrets: inherit

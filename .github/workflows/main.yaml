@@ -9,13 +9,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  call-print_number_workflow-1:
-    uses: ./.github/workflows/print_number.yaml
-    with:
-      number: 99
-    secrets: inherit
+  get_number_workflow:
+    runs-on: macos-latest
+    steps:
+      name: Randomize number
+      run: ./.github/scripts/get_number.sh
 
-  call-print_number_workflow-2:
+  call-print_number_workflow:
     uses: ./.github/workflows/print_number.yaml
     with:
       number: 100

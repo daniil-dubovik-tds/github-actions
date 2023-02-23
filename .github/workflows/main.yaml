@@ -15,10 +15,14 @@ jobs:
       random-number: ${{ steps.get-random-number-step.outputs.number }}
     steps:
       - uses: actions/checkout@v3
+
+      - name: Bundle install
+        run: bundle install
+
       - name: Get a random number
         id: get-random-number-step
         run: |
-          random_number="$(./.github/scripts/get_number.sh)"
+          random_number="$(./.github/scripts/get_number.rb)"
           echo "Result: $random_number"
           echo "number=$random_number" >> $GITHUB_OUTPUT
 

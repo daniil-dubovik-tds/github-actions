@@ -10,6 +10,13 @@ on:
       number:
         description: 'Put a number'
         type: string
+      environment:
+        description: 'Environment'
+        type: choice
+        options:
+          - Staging
+          - UAT
+          - Production
 
   workflow_dispatch:
     # Inputs the workflow accepts.
@@ -21,6 +28,13 @@ on:
         default: '0'
         # Input has to be provided for the workflow to run
         required: true
+      environment:
+        description: 'Environment'
+        type: choice
+        options:
+          - Staging
+          - UAT
+          - Production
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

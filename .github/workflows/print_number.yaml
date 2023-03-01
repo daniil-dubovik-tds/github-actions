@@ -12,7 +12,6 @@ on:
         type: string
       environment:
         description: 'Environment'
-        type: choice
         options:
           - Staging
           - UAT
